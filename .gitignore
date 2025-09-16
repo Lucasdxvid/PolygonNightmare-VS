@@ -76,8 +76,8 @@ crashlytics-build.properties
 ehthumbs.db
 Thumbs.db
 
-# IDE/Editor files
-.vscode/
+# IDE/Editor files - MANTENER .vscode para Git
+# .vscode/
 .idea/
 *.swp
 *.swo
@@ -93,3 +93,24 @@ plastic.workspace
 *.plastic
 **/Assets/Plugins/PlasticSCM*
 **/assets/plugins/PlasticSCM*
+
+# ===========================================
+# CONFIGURACIÓN HÍBRIDA: Unity + Git
+# ===========================================
+
+# Ignorar ASSETS completos para Git (Unity los maneja)
+# Solo permitir scripts que queremos en Git
+Assets/
+!Assets/Scripts/
+!Assets/Scripts/**
+!Assets/FOLDER_STRUCTURE.md
+
+# Ignorar configuraciones de Unity (Plastic las maneja)
+ProjectSettings/
+Packages/
+
+# Archivos meta de Unity (Plastic los maneja)
+*.meta
+
+# Configuraciones específicas de Unity (Plastic las maneja)
+ignore.conf
