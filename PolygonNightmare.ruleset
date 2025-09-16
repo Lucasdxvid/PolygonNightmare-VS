@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="PolygonNightmare Unity Rules" Description="Reglas de análisis de código para el proyecto PolygonNightmare" ToolsVersion="16.0">
+  <Localization ResourceAssembly="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.dll" ResourceBaseName="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.Localized">
+    <Name Resource="PolygonNightmare_Title" />
+    <Description Resource="PolygonNightmare_Description" />
+  </Localization>
+
+  <!-- Reglas de Diseño -->
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <!-- Evitar clases demasiado complejas -->
+    <Rule Id="CA1501" Action="Warning" />
+    <!-- Evitar métodos demasiado largos -->
+    <Rule Id="CA1502" Action="Warning" />
+    <!-- Evitar parámetros excesivos -->
+    <Rule Id="CA1505" Action="Warning" />
+    <!-- Evitar acoplamiento excesivo -->
+    <Rule Id="CA1506" Action="Warning" />
+  </Rules>
+
+  <!-- Reglas de Convenciones de Nomenclatura -->
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Identificadores deben tener nombres correctos -->
+    <Rule Id="CA1708" Action="Warning" />
+    <!-- Los identificadores no deben contener guiones bajos -->
+    <Rule Id="CA1707" Action="Warning" />
+    <!-- Usar nomenclatura consistente -->
+    <Rule Id="CA1715" Action="Warning" />
+  </Rules>
+
+  <!-- Reglas de Performance -->
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Evitar concatenación de strings en bucles -->
+    <Rule Id="CA1810" Action="Warning" />
+    <!-- Evitar arrays vacíos -->
+    <Rule Id="CA1825" Action="Warning" />
+    <!-- Usar StringBuilder cuando corresponda -->
+    <Rule Id="CA1834" Action="Info" />
+  </Rules>
+
+  <!-- Reglas de Seguridad -->
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- No usar tipos obsoletos -->
+    <Rule Id="CA1001" Action="Warning" />
+    <!-- Implementar IDisposable correctamente -->
+    <Rule Id="CA1063" Action="Warning" />
+    <!-- Validar argumentos de métodos públicos -->
+    <Rule Id="CA1062" Action="Info" />
+  </Rules>
+
+  <!-- Reglas de Mantenibilidad -->
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Evitar complejidad ciclomática excesiva -->
+    <Rule Id="CA1502" Action="Warning" />
+    <!-- Mantener índice de mantenibilidad alto -->
+    <Rule Id="CA1505" Action="Info" />
+  </Rules>
+
+  <!-- Reglas específicas para Unity -->
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Usar CompareTag en lugar de tag == -->
+    <Rule Id="UNT0002" Action="Warning" />
+    <!-- Usar métodos de Unity eficientemente -->
+    <Rule Id="UNT0006" Action="Info" />
+    <!-- Evitar instanciación innecesaria en Update -->
+    <Rule Id="UNT0007" Action="Warning" />
+    <!-- Usar null coalescing con GameObject -->
+    <Rule Id="UNT0008" Action="Info" />
+  </Rules>
+
+  <!-- Reglas de Estilo de Código C# -->
+  <Rules AnalyzerId="Microsoft.CodeStyle.Analyzers" RuleNamespace="Microsoft.CodeStyle.Analyzers">
+    <!-- Preferir var cuando el tipo es evidente -->
+    <Rule Id="IDE0007" Action="Info" />
+    <!-- Usar expresiones condicionales -->
+    <Rule Id="IDE0009" Action="Info" />
+    <!-- Usar inicializadores de objeto -->
+    <Rule Id="IDE0017" Action="Info" />
+    <!-- Usar expresiones lambda simples -->
+    <Rule Id="IDE0053" Action="Info" />
+    <!-- Usar expresiones de interpolación de strings -->
+    <Rule Id="IDE0071" Action="Info" />
+  </Rules>
+
+  <!-- Reglas de Documentación -->
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Requerir comentarios XML para métodos públicos -->
+    <Rule Id="SA1600" Action="Info" />
+    <!-- Elementos públicos deben estar documentados -->
+    <Rule Id="SA1633" Action="None" />
+    <!-- Archivos deben tener header -->
+    <Rule Id="SA1652" Action="None" />
+  </Rules>
+
+  <!-- Reglas de Orden y Espaciado -->
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Orden correcto de elementos -->
+    <Rule Id="SA1200" Action="None" />
+    <!-- Using statements placement -->
+    <Rule Id="SA1208" Action="Warning" />
+    <!-- Líneas en blanco entre métodos -->
+    <Rule Id="SA1516" Action="Info" />
+  </Rules>
+
+  <!-- Reglas de Legibilidad -->
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- Prefijo de campos privados -->
+    <Rule Id="SA1309" Action="None" />
+    <!-- Usar this. cuando sea necesario -->
+    <Rule Id="SA1101" Action="None" />
+    <!-- Variables deben estar en camelCase -->
+    <Rule Id="SA1312" Action="Warning" />
+  </Rules>
+</RuleSet>
